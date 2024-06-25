@@ -688,15 +688,19 @@ nav.navbar.bootsnav.sticked .attr-nav.social li {
   padding: 20px 0 !important;
 }
 
-/*change1 les titres de services dans la page d'accueil */
-
 .site-heading h2 {
-  font-size: 55px;
   display: inline-block;
-  font-weight: 600;
+  font-weight: 700;
   padding-bottom: 20px;
   position: relative;
   text-transform: uppercase;
+}
+
+/*creation les titres de services dans la page d'accueil */
+
+.big_title h2{
+  font-size: 55px;
+  font-weight: 600;
   padding-top: 75px;
   color: white;
 }
@@ -1665,6 +1669,7 @@ body,
   -o-transition: all 0.35s ease-in-out;
 }
 
+
 .about-area .features .item:hover i {
   color: #ffffff;
   background: #2568ef;
@@ -1769,6 +1774,30 @@ body,
   margin-top: 10px;
 }
 
+/*creation 5 les icones de values*/
+#about .item i {
+  font-size: 45px;
+  color: #2568ef;
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+  line-height: 100px;
+  background: #f7fdfc;
+  text-align: center;
+  margin-bottom: 25px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  transition: all 0.35s ease-in-out;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.35s ease-in-out;
+  -ms-transition: all 0.35s ease-in-out;
+  -o-transition: all 0.35s ease-in-out;
+}
+#about .item:hover i {
+  color: #ffffff;
+  background: #2568ef;
+}
 /* ============================================================== 
      # Work Process
 =================================================================== */
@@ -2210,6 +2239,24 @@ body,
 /* Styles pour les items cachés */
 .hidden {
   display: none; /* Assurez-vous que display: none est appliqué correctement */
+}
+
+
+/*creation3 pour les graphical designer*/
+.thum-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30%;
+}
+.thumb-logo img {
+  object-fit: contain; /* Maintient l'aspect ratio de l'image */
+}
+
+
+/*creation4 titre de "about us"*/
+.title-section{
+  color: #0077B5;
 }
 /* ============================================================== 
      # Services
@@ -3501,6 +3548,34 @@ body,
 /* ============================================================== 
      # Contact
 =================================================================== */
+/*creation*/
+#contact{
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('assets/img/banner/2.jpg') no-repeat center center fixed;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+}
+
+.contact-section{
+  background-color: white;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5%;
+}
+picture{
+  width: 250px;
+  height: 300px;
+}
+
+
 .contact-area .contact-form input, 
 .contact-area .contact-form textarea {
   box-shadow: inherit;

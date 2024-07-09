@@ -1,9 +1,9 @@
 /* ----------------------------------
 
-Template Name: Boxass - Startup Landing Page Template
-Author: validtheme
-Version: 1.2
-Last change: 15.9.2019
+Template Name: Site Goulbam Enterprises
+Author: Olga stagiaire
+Version: 1.0
+Last change: 04-07-2024
 Main Font : Poppins
 Main Color : #2568ef
 
@@ -2226,21 +2226,24 @@ body,
   display: none;
 }*/
 
-/* Afficher seulement les items avec la classe initially-visible */
+/* Afficher seulement les items avec la classe initially-visible 
 .blog-items .initially-visible {
-  display: flex; /* ou display: block; selon votre mise en page */
-}
+  display: flex; /* ou display: block; selon votre mise en page 
+}*/
 
-/* Styles pour les items visibles */
+/* Styles pour les items visibles 
 .visible {
-  display: flex; /* Assurez-vous que display: block est appliqué correctement */
-}
+  display: flex; /* Assurez-vous que display: block est appliqué correctement 
+}*/
 
-/* Styles pour les items cachés */
+/* Styles pour les items cachés 
 .hidden {
-  display: none; /* Assurez-vous que display: none est appliqué correctement */
-}
+  display: none; /* Assurez-vous que display: none est appliqué correctement 
+}*/
 
+.box-work {
+  display: none;
+}
 
 /*creation3 pour les graphical designer*/
 .thum-logo{
@@ -4334,3 +4337,6 @@ footer.demo .copyright {
   padding: 10px;
   box-shadow: -1px 3px 10px 0 rgba(0, 0, 0, 0.06);
 }
+
+
+

@@ -1,69 +1,81 @@
-const blogItems = document.querySelectorAll('.blog-items .equal-height');
+$(document).ready(function() {
+    var itemsPerPage = 3;
+    var $items = $('.box-work');
+    var totalPages = Math.ceil($items.length / itemsPerPage);
+    var currentPage = 1;
 
-let visibleIndexStart = 0;
-let visibleIndexEnd = 2; // Les trois premiers items sont initialement visibles
-
-function showNextItems() {
-    // Vérifiez si les prochains items dépassent la longueur des blogItems
-    if (visibleIndexEnd >= blogItems.length - 1) return;
-
-    // Cacher les items actuellement visibles
-    for (let i = visibleIndexStart; i <= visibleIndexEnd; i++) {
-        blogItems[i].classList.remove('visible');
-        blogItems[i].classList.add('hidden');
+    function showPage(page) {
+        $items.hide();
+        $items.slice((page - 1) * itemsPerPage, page * itemsPerPage).show();
+        $('.pagination li').removeClass('active');
+        $('.pagination li').eq(page).addClass('active');
     }
 
-    // Mettre à jour les index pour les nouveaux items visibles
-    visibleIndexStart += 3;
-    visibleIndexEnd += 3;
-
-    // Vérifiez si visibleIndexEnd dépasse la longueur des blogItems
-    if (visibleIndexEnd >= blogItems.length) {
-        visibleIndexEnd = blogItems.length - 1;
-    }
-
-    // Afficher les nouveaux items visibles
-    for (let i = visibleIndexStart; i <= visibleIndexEnd; i++) {
-        if (blogItems[i]) {
-            blogItems[i].classList.remove('hidden');
-            blogItems[i].classList.add('visible');
+    $('#next').click(function(e) {
+        e.preventDefault();
+        if (currentPage < totalPages) {
+            currentPage++;
+            showPage(currentPage);
         }
-    }
-}
+    });
 
-function showPreviousItems() {
-    // Vérifiez si les items précédents sont inférieurs à zéro
-    if (visibleIndexStart <= 0) return;
-
-    // Cacher les items actuellement visibles
-    for (let i = visibleIndexStart; i <= visibleIndexEnd; i++) {
-        blogItems[i].classList.remove('visible');
-        blogItems[i].classList.add('hidden');
-    }
-
-    // Mettre à jour les index pour les nouveaux items visibles
-    visibleIndexStart -= 3;
-    visibleIndexEnd -= 3;
-
-    // Vérifiez si visibleIndexStart descend en dessous de zéro
-    if (visibleIndexStart < 0) {
-        visibleIndexStart = 0;
-        visibleIndexEnd = 2;
-    }
-
-    // Afficher les nouveaux items visibles
-    for (let i = visibleIndexStart; i <= visibleIndexEnd; i++) {
-        if (blogItems[i]) {
-            blogItems[i].classList.remove('hidden');
-            blogItems[i].classList.add('visible');
+    $('#previous').click(function(e) {
+        e.preventDefault();
+        if (currentPage > 1) {
+            currentPage--;
+            showPage(currentPage);
         }
+    });
+
+    $('.pagination a[data-page]').click(function(e) {
+        e.preventDefault();
+        currentPage = parseInt($(this).data('page'));
+        showPage(currentPage);
+    });
+
+    showPage(currentPage);
+});
+
+
+
+
+
+/*
+Avec l'affichage des 3 items avec active, visible
+$(document).ready(function() {
+    var itemsPerPage = 3;
+    var $items = $('.item');
+    var totalPages = Math.ceil($items.length / itemsPerPage);
+    var currentPage = 1;
+
+    function showPage(page) {
+        $items.hide();  // Cacher tous les items
+        $items.slice((page - 1) * itemsPerPage, page * itemsPerPage).show();  // Afficher les items pour la page spécifiée
+        $('.pagination li').removeClass('active');  // Supprimer la classe 'active' de tous les éléments de pagination
+        $('.pagination li').eq(page).addClass('active');  // Ajouter la classe 'active' à l'élément de pagination correspondant à la page
     }
-}
 
-// Écouteur d'événement pour le bouton Next
-const nextButton = document.getElementById('nextButton');
-nextButton.addEventListener('click', showNextItems);
+    $('#next').click(function(e) {
+        e.preventDefault();  // Empêcher le comportement par défaut du lien
+        if (currentPage < totalPages) {
+            currentPage++;  // Incrémenter le numéro de la page actuelle
+            showPage(currentPage);  // Afficher la nouvelle page
+        }
+    });
 
-// Écouteur d'événement pour le bouton Previous
-const prevButton = document.getElementById('prevButton');
-prevButton.addEventListener('click', showPreviousItems);
+    $('#previous').click(function(e) {
+        e.preventDefault();  // Empêcher le comportement par défaut du lien
+        if (currentPage > 1) {
+            currentPage--;  // Décrémenter le numéro de la page actuelle
+            showPage(currentPage);  // Afficher la nouvelle page
+        }
+    });
+
+    $('.pagination a[data-page]').click(function(e) {
+        e.preventDefault();  // Empêcher le comportement par défaut du lien
+        currentPage = parseInt($(this).data('page'));  // Récupérer le numéro de la page depuis l'attribut 'data-page'
+        showPage(currentPage);  // Afficher la nouvelle page
+    });
+
+    showPage(currentPage);  // Afficher la première page au chargement
+});*/

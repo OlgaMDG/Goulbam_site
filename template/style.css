@@ -251,6 +251,10 @@ input {
   padding: 0 15px;
 }
 
+.bg-blue {
+  background-color: #2568ef;
+}
+
 .bg-cover {
   background-position: center center;
   background-size: cover;
@@ -1777,12 +1781,14 @@ body,
 /*creation 5 les icones de values*/
 #about .item i {
   font-size: 45px;
-  color: #2568ef;
+  /*color: #2568ef;*/
+  color: #f7fdfc;
   display: inline-block;
   height: 100px;
   width: 100px;
   line-height: 100px;
-  background: #f7fdfc;
+  /*background: #f7fdfc;*/
+  background:#2568ef;
   text-align: center;
   margin-bottom: 25px;
   -webkit-border-radius: 50%;
@@ -1795,8 +1801,19 @@ body,
   -o-transition: all 0.35s ease-in-out;
 }
 #about .item:hover i {
-  color: #ffffff;
-  background: #2568ef;
+  /*color: #ffffff;
+  background: #2568ef;*/
+  color: #2568ef;
+  background: #ffffff;
+}
+#about .title-section{
+  color: white;
+}
+#about p{
+  color: white;
+}
+#about div.site-heading h2::before {
+  background: white none repeat scroll 0 0;
 }
 /* ============================================================== 
      # Work Process
@@ -1974,6 +1991,34 @@ body,
 
 .work-step-items .info a {
   margin-top: 15px;
+}
+
+
+/* creation : Animation de backrgound*/
+@keyframes changeBackground {
+  0% {
+      background-image: url('assets/img/Multimédias/work1_boss.png');
+  }
+  33.33% {
+      background-image: url('assets/img/Multimédias/work2_cmr1.png');
+  }
+  66.66% {
+      background-image: url('assets/img/Multimédias/work3_chancimi.png');
+  }
+  100% {
+      background-image: url('assets/img/Multimédias/work4_dvcam1.png');
+  }
+}
+.text-container{
+  font-size: 100px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 255, 0.5);
+}
+
+.animated-background {
+  animation: changeBackground 12s infinite;
+  background-size: cover;
+  background-position: center;
 }
 
 /* ============================================================== 
@@ -2242,7 +2287,7 @@ body,
 }*/
 
 .box-work {
-  display: none;
+ /* display: none;*/
 }
 
 /*creation3 pour les graphical designer*/
@@ -3113,6 +3158,25 @@ body,
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
+.blog-area .blog-items .info .content .progress {
+  position: absolute;
+  right: 0;
+  top: -60px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  background: red;
+  color: #ffffff;
+  padding: 0 15px;
+  height: 40px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 40px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
 
 .blog-area .blog-items .item {
   background: #ffffff;
@@ -4338,5 +4402,21 @@ footer.demo .copyright {
   box-shadow: -1px 3px 10px 0 rgba(0, 0, 0, 0.06);
 }
 
+/*creation animation icones*/
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+  }
+  40% {
+      transform: translateY(-30px);
+  }
+  60% {
+      transform: translateY(-15px);
+  }
+}
+
+.icon-animation {
+  opacity: 0; /* Initial opacity set to 0 */
+}
 
 

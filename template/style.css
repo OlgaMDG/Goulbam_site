@@ -1,57 +1,13 @@
 /* ----------------------------------
 
 Template Name: Site Goulbam Enterprises
-Author: Olga stagiaire
+Modified by: Olga stagiaire
 Version: 1.0
-Last change: 04-07-2024
+Last change: 07-2024
 Main Font : Poppins
 Main Color : #2568ef
 
 -------------------------------------
-
-[table of contents]
-        
-    01. Template Default CSS
-    02. Typography
-    03. Preloader
-    04. Breadcrumb
-    05. Navbar
-        - Navbar Default
-        - Navbar Box
-        - Navbar Sticky
-        - Navbar Transparent
-    06. About
-    07. Features
-    08. Work Process
-    09. Pricing Table
-        - Simple Version
-        - Tab Version
-    10. Team
-        - Default Version
-        - Carousel Version
-    11. Testimonials
-    12. Form
-    13. Clients
-    14. Video Features
-    15. Faq
-    16. Software Overview
-        - Tab Version
-        - Carousel Version
-    17. Fun Factors
-    18. Services
-        - Default Version
-        - Carousel Version
-    19. Blog
-    20. Concat Area
-    21. Google Maps
-    22. Error 404
-    23. Footer
-    24. Media Query
-    25. PHP Contact Form
-    26. Others
-
-*/
-
 
 /*
 ** General Styles for HTML tags
@@ -699,8 +655,6 @@ nav.navbar.bootsnav.sticked .attr-nav.social li {
   position: relative;
   text-transform: uppercase;
 }
-
-/*creation les titres de services dans la page d'accueil */
 
 .big_title h2{
   font-size: 55px;
@@ -1781,13 +1735,11 @@ body,
 /*creation 5 les icones de values*/
 #about .item i {
   font-size: 45px;
-  /*color: #2568ef;*/
   color: #f7fdfc;
   display: inline-block;
   height: 100px;
   width: 100px;
   line-height: 100px;
-  /*background: #f7fdfc;*/
   background:#2568ef;
   text-align: center;
   margin-bottom: 25px;
@@ -1801,8 +1753,6 @@ body,
   -o-transition: all 0.35s ease-in-out;
 }
 #about .item:hover i {
-  /*color: #ffffff;
-  background: #2568ef;*/
   color: #2568ef;
   background: #ffffff;
 }
@@ -2265,29 +2215,6 @@ body,
   padding: 10px;
   margin-bottom: 10px;
   text-transform: uppercase;
-}
-/* Cacher tous les items initialement 
-.blog-items .equal-height {
-  display: none;
-}*/
-
-/* Afficher seulement les items avec la classe initially-visible 
-.blog-items .initially-visible {
-  display: flex; /* ou display: block; selon votre mise en page 
-}*/
-
-/* Styles pour les items visibles 
-.visible {
-  display: flex; /* Assurez-vous que display: block est appliqué correctement 
-}*/
-
-/* Styles pour les items cachés 
-.hidden {
-  display: none; /* Assurez-vous que display: none est appliqué correctement 
-}*/
-
-.box-work {
- /* display: none;*/
 }
 
 /*creation3 pour les graphical designer*/
@@ -4208,40 +4135,37 @@ footer.default-padding-top .footer-bottom {
 .login-items .content .sign-up p {
     margin: 0;
 }
-
 .login-items .content .login-social li a {
-    display: inline-block;
-    height: 40px;
-    width: 40px;
-    line-height: 40px;
-    text-align: center;
-    font-size: 15px;
-    border: 1px solid #e7e7e7;
-    border-radius: 50%;
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  height: 30px;
+  width: 70px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 15px;
+  border-radius: 10%;
+}
+.login-items .content .login-social li a:hover {
+  box-shadow: 0 0 10px #0077B5; 
 }
 
 .login-items .content .login-social li.facebook a {
+  color: #e7e7e7;
+  background-color: #3B5998;
+}
+.login-items .content .login-social li.facebook a:hover {
   color: #3B5998;
-}
-
-.login-items .content .login-social li.twitter a {
-  color: #1DA1F2;
-}
-
-.login-items .content .login-social li.pinterest a {
-  color: #BD081C;
-}
-
-.login-items .content .login-social li.g-plus a {
-  color: #DB4437;
+  background-color: #e7e7e7;
 }
 
 .login-items .content .login-social li.linkedin a {
-  color: #0077B5;
+  color: #e7e7e7;
+  background-color: #0077B5;
 }
-
-.login-items .content .login-social li.instagram a {
-  color: #e4717a;
+.login-items .content .login-social li.linkedin a:hover {
+  color: #0077B5;
+  background-color: #e7e7e7;
 }
 
 .login-items {
@@ -4419,4 +4343,6 @@ footer.demo .copyright {
   opacity: 0; /* Initial opacity set to 0 */
 }
 
-
+.box-work{
+  display: none;
+}

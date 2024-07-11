@@ -331,7 +331,7 @@
                     $('#message').hide();
 
                     $('#submit')
-                        .after('<img src="assets/img/ajax-loader.gif" class="loader" />')
+                        .html('Envoi vers Goulbam...') 
                         .attr('disabled', 'disabled');
 
                     $.post(action, {
